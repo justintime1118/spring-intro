@@ -1,4 +1,4 @@
-package springroadmap.springintro.Controller;
+package springroadmap.springintro.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,6 +1,5 @@
 package springroadmap.springintro.repository;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import springroadmap.springintro.domain.Member;
@@ -11,7 +10,7 @@ import static org.assertj.core.api.Assertions.*;
 
 public class MemoryMemberRepositoryTest {
 
-    MemberRepository memberRepository = new MemoryMemberRepository();
+    MemoryMemberRepository memberRepository = new MemoryMemberRepository();
 
     @AfterEach
     void clear() {

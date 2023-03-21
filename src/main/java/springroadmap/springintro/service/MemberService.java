@@ -1,11 +1,13 @@
 package springroadmap.springintro.service;
 
+import org.springframework.stereotype.Service;
 import springroadmap.springintro.domain.Member;
 import springroadmap.springintro.repository.MemberRepository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
 
     private final MemberRepository memberRepository;

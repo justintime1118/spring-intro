@@ -1,13 +1,22 @@
 package springroadmap.springintro.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import springroadmap.springintro.service.MemberService;
 
 @Controller
-public class DemoController {
+public class MemberController {
+
+    @Autowired
+    private final MemberService memberService;
+
+    public MemberController(MemberService memberService) {
+        this.memberService = memberService;
+    }
 
     @GetMapping("mappedUrl") //url과 메소드를 매핑시켜줌
     public String hello(Model model) {

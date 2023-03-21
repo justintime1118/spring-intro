@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import springroadmap.springintro.service.MemberService;
 
 @Controller
+// Controller, Service, Repository 어노테이션 모두 @Component를 갖고있기에 모두 컴포넌트 스캔 대상이 되어 스프링 빈으로 등록된다.
+// 기본적으로 Singleton으로 동작 (하나의 스프링 빈만 생성된다. 메모리 절약 등 장점이 있다)
 public class MemberController {
-
-    @Autowired
+    @Autowired // 스프링 컨테이너에 들어있는 스프링 빈 중에서 찾아서 자동으로 의존성을 주입준다. Dependency Injection
     private final MemberService memberService;
 
     public MemberController(MemberService memberService) {

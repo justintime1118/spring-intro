@@ -7,7 +7,7 @@ import springroadmap.springintro.repository.MemberRepository;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+//@Service
 public class MemberService {
 
     private final MemberRepository memberRepository;

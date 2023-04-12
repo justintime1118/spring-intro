@@ -11,6 +11,8 @@ import springroadmap.springintro.domain.Member;
 import springroadmap.springintro.domain.MemberForm;
 import springroadmap.springintro.service.MemberService;
 
+import java.util.List;
+
 @Controller
 // Controller, Service, Repository 어노테이션 모두 @Component를 갖고있기에 모두 컴포넌트 스캔 대상이 되어 스프링 빈으로 등록된다.
 // 기본적으로 Singleton으로 동작 (하나의 스프링 빈만 생성된다. 메모리 절약 등 장점이 있다)
@@ -61,6 +63,12 @@ public class MemberController {
         return "redirect:/"; // 회원가입 처리를 한 뒤에 초기화면으로 redirect 시킴
     }
 
+    @GetMapping("/members")
+    public String list(Model model) {
+        List<Member> members = memberService.findMembers();
+        model.addAttribute("members", members);
+        return "members/memberList"; // 여기서부터 본격적으로 템플릿 엔진의 도움을 많이 받게 된다
+    }
 
     static class CustomObject {
         String jsonKey;
